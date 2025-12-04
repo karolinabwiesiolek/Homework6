@@ -1,6 +1,6 @@
 ---
 title: "Homework6"
-output: html_document
+output: github_document
 date: "2025-12-04"
 ---
 
