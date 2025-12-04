@@ -137,9 +137,9 @@ city_or_df =
   ) |>
   select(city_state, results) |>
   unnest(results) |>
-  # keep only male vs female coefficient
+  #  only male vs female coefficient
   filter(term == "victim_sexMale") |>
-  # reorder by OR for plotting
+  # reordering
   mutate(
     city_state = fct_reorder(city_state, estimate)
   )
@@ -236,7 +236,7 @@ boot_fn = function(df) {
   # Extract r^2
   r2 = broom::glance(fit)$r.squared
   
-  # Extract slope estimates
+  #slope estimates
   coefs = broom::tidy(fit)
   beta1 = coefs$estimate[coefs$term == "tmin"]
   beta2 = coefs$estimate[coefs$term == "prcp"]
